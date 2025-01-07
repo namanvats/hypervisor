@@ -1,11 +1,9 @@
-# File: tests/test_routes/test_user_routes.py
 from fastapi.testclient import TestClient
 from main import app
 
 client = TestClient(app)
 
 def test_create_user(client):
-    # Pre-create an organization to associate the user with
     client.post("/organization/create", json={"name": "TestOrg"})
 
     # Create the user

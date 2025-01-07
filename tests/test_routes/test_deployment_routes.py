@@ -1,36 +1,8 @@
-# File: tests/test_routes/test_deployment_routes.py
 from fastapi.testclient import TestClient
 from main import app
 import uuid
 
 client = TestClient(app)
-
-# def test_create_deployment():
-#     client.post("/organization/create", json={"name": "TestOrg"})
-#     client.post(
-#         "/cluster/create",
-#         json={
-#             "name": "TestCluster",
-#             "organization_name": "TestOrg",
-#             "total_cpu": 10,
-#             "total_ram": 20,
-#             "total_gpu": 5,
-#         },
-#     )
-#     response = client.post(
-#         "/deployment/create",
-#         json={
-#             "cluster_name": "TestCluster",
-#             "organization_name": "TestOrg",
-#             "docker_image": "test/image",
-#             "required_cpu": 2,
-#             "required_ram": 4,
-#             "required_gpu": 1,
-#             "priority": 1,
-#         }
-#     )
-#     assert response.status_code == 200
-#     assert response.json()["message"] == "Deployment created successfully"
 
 def test_create_deployment(client):
     org_name = f"TestOrg-{uuid.uuid4()}"

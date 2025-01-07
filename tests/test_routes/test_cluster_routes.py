@@ -1,4 +1,3 @@
-# File: tests/test_routes/test_cluster_routes.py
 from fastapi.testclient import TestClient
 from main import app
 import uuid
